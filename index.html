@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alivekodi Premier League 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --surface: #111827;
+  --card: #1a2235;
+  --border: #1e2d42;
+  --accent: #f59e0b;
+  --accent2: #10b981;
+  --accent3: #3b82f6;
+  --red: #ef4444;
+  --text: #f1f5f9;
+  --muted: #64748b;
+  --subtle: #94a3b8;
+  --live: #ef4444;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;overflow-x:hidden;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0d1526 0%,#1a2a4a 50%,#0d1526 100%);border-bottom:2px solid var(--accent);padding:0 20px;position:sticky;top:0;z-index:100;box-shadow:0 4px 30px rgba(0,0,0,0.5);}
+.header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-badge{background:var(--accent);color:#000;font-family:'Bebas Neue',sans-serif;font-size:22px;padding:4px 10px;border-radius:4px;letter-spacing:1px;}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--text);}
+.logo-sub{font-size:11px;color:var(--accent);letter-spacing:3px;font-weight:600;display:block;line-height:1;}
+.nav{display:flex;gap:4px;}
+.nav-btn{background:none;border:none;color:var(--subtle);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;padding:8px 14px;border-radius:6px;cursor:pointer;transition:.2s;letter-spacing:1px;text-transform:uppercase;}
+.nav-btn:hover,.nav-btn.active{background:var(--accent);color:#000;}
+.admin-btn{background:var(--accent);color:#000;border:none;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;padding:8px 16px;border-radius:6px;cursor:pointer;letter-spacing:1px;display:flex;align-items:center;gap:6px;}
+.admin-btn:hover{background:#d97706;}
+
+/* MAIN */
+.main{max-width:1400px;margin:0 auto;padding:20px;}
+
+/* SECTION */
+.section{display:none;}
+.section.active{display:block;}
+
+/* HERO BANNER */
+.hero{background:linear-gradient(135deg,#1a2a4a,#0d1526);border:1px solid var(--border);border-radius:16px;padding:30px;margin-bottom:24px;position:relative;overflow:hidden;}
+.hero::before{content:'APL';position:absolute;right:-20px;top:-20px;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(245,158,11,0.05);line-height:1;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:4px;color:var(--accent);}
+.hero-sub{color:var(--subtle);font-size:14px;letter-spacing:2px;margin-top:4px;}
+.hero-stats{display:flex;gap:32px;margin-top:20px;}
+.hero-stat{text-align:center;}
+.hero-stat-val{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:700;color:var(--accent);}
+.hero-stat-label{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+
+/* LIVE MATCH CARD */
+.live-matches-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-bottom:24px;}
+.match-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.3s;cursor:pointer;}
+.match-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,158,11,0.15);}
+.match-card-header{background:linear-gradient(90deg,#1e2d42,#1a2235);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.match-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.live-pill{background:var(--live);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:1px;animation:pulse 1.5s infinite;}
+.upcoming-pill{background:var(--accent3);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:1px;}
+.completed-pill{background:var(--accent2);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:1px;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.6;}}
+.match-card-body{padding:16px;}
+.team-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;}
+.team-info{display:flex;align-items:center;gap:10px;}
+.team-logo-sm{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:14px;font-weight:700;flex-shrink:0;}
+.team-name-main{font-size:16px;font-weight:700;letter-spacing:.5px;}
+.team-name-short{font-size:12px;color:var(--muted);}
+.score-display{text-align:right;}
+.score-runs{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:700;color:var(--text);}
+.score-overs{font-size:12px;color:var(--muted);}
+.score-yet{font-size:13px;color:var(--muted);font-style:italic;}
+.match-divider{border:none;border-top:1px dashed var(--border);margin:4px 0;}
+.match-status-bar{background:#0d1526;padding:8px 16px;font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.5px;border-top:1px solid var(--border);}
+.batting-indicator{color:var(--accent2);font-size:10px;margin-left:4px;}
+
+/* SCORECARD */
+.scorecard-container{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.scorecard-header{background:linear-gradient(135deg,#1a2a4a,#0d1a2e);padding:20px 24px;border-bottom:1px solid var(--border);}
+.sc-match-info{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.sc-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:4px;}
+.sc-venue{font-size:13px;color:var(--subtle);}
+.innings-tabs{display:flex;border-bottom:1px solid var(--border);}
+.innings-tab{padding:12px 24px;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;border-bottom:2px solid transparent;color:var(--muted);transition:.2s;text-transform:uppercase;}
+.innings-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
+.innings-tab:hover{color:var(--text);}
+.innings-content{padding:20px 24px;}
+.batting-table,.bowling-table{width:100%;border-collapse:collapse;margin-bottom:24px;}
+.batting-table th,.bowling-table th{text-align:left;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;padding:8px 12px;border-bottom:1px solid var(--border);}
+.batting-table td,.bowling-table td{padding:10px 12px;font-size:14px;border-bottom:1px solid rgba(30,45,66,.5);vertical-align:middle;}
+.batting-table tr:hover td,.bowling-table tr:hover td{background:rgba(245,158,11,.04);}
+.player-name-link{font-weight:600;color:var(--text);}
+.dismissal-info{font-size:11px;color:var(--muted);display:block;}
+.bold-score{font-family:'Orbitron',sans-serif;font-size:15px;font-weight:700;color:var(--accent);}
+.sr-badge{font-size:11px;padding:2px 6px;border-radius:4px;font-weight:700;}
+.sr-high{background:rgba(16,185,129,.15);color:var(--accent2);}
+.sr-mid{background:rgba(245,158,11,.15);color:var(--accent);}
+.sr-low{background:rgba(239,68,68,.15);color:var(--red);}
+.dnb{color:var(--muted);font-style:italic;font-size:12px;padding:8px 12px;}
+.extras-row td{color:var(--muted);font-size:13px;}
+.total-row td{font-weight:700;font-size:15px;color:var(--accent);border-top:1px solid var(--border) !important;}
+.section-heading{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--accent);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.fow-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.fow-pill{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:12px;}
+.fow-wkt{color:var(--accent);font-weight:700;}
+
+/* PARTNERSHIP */
+.partnership-bar{background:var(--surface);border-radius:8px;padding:12px 16px;margin-bottom:16px;}
+.pb-label{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.pb-bar-track{background:var(--border);border-radius:4px;height:6px;margin-bottom:4px;overflow:hidden;}
+.pb-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px;}
+
+/* COMMENTARY */
+.commentary-container{max-height:400px;overflow-y:auto;}
+.comm-item{padding:12px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;}
+.comm-over{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;color:var(--accent);min-width:40px;}
+.comm-ball{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.ball-0{background:#1a2235;color:var(--muted);}
+.ball-1,.ball-2,.ball-3{background:rgba(59,130,246,.2);color:var(--accent3);}
+.ball-4{background:rgba(16,185,129,.2);color:var(--accent2);}
+.ball-6{background:rgba(245,158,11,.2);color:var(--accent);}
+.ball-W{background:rgba(239,68,68,.2);color:var(--red);}
+.ball-Wd,.ball-Nb{background:rgba(148,163,184,.15);color:var(--subtle);}
+.comm-text{font-size:13px;color:var(--subtle);line-height:1.6;}
+.comm-text strong{color:var(--text);}
+
+/* OVER GRID */
+.over-grid{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.over-group{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px;}
+.over-num{font-size:10px;color:var(--muted);margin-bottom:4px;text-align:center;}
+.over-balls{display:flex;gap:4px;}
+.ob{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
+
+/* POINTS TABLE */
+.points-table{width:100%;border-collapse:collapse;}
+.points-table th{background:#0d1526;text-align:left;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;padding:10px 14px;border-bottom:1px solid var(--border);}
+.points-table td{padding:12px 14px;font-size:14px;border-bottom:1px solid rgba(30,45,66,.5);}
+.points-table tr:hover td{background:rgba(245,158,11,.04);}
+.rank-badge{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
+.rank-1{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;}
+.rank-2{background:linear-gradient(135deg,#94a3b8,#64748b);color:#fff;}
+.rank-3{background:linear-gradient(135deg,#b45309,#92400e);color:#fff;}
+.rank-other{background:var(--border);color:var(--muted);}
+.nrr-pos{color:var(--accent2);}
+.nrr-neg{color:var(--red);}
+.qual-bar{width:4px;height:40px;border-radius:2px;}
+.qual-yes{background:var(--accent2);}
+.qual-no{background:var(--border);}
+.form-badges{display:flex;gap:3px;}
+.form-w{background:rgba(16,185,129,.2);color:var(--accent2);width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+.form-l{background:rgba(239,68,68,.2);color:var(--red);width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+.form-nr{background:rgba(148,163,184,.2);color:var(--muted);width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+
+/* SCHEDULE */
+.schedule-grid{display:flex;flex-direction:column;gap:12px;}
+.schedule-group-label{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--muted);margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.schedule-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;transition:.2s;}
+.schedule-card:hover{border-color:var(--accent);}
+.sc-match-num{font-size:12px;color:var(--muted);letter-spacing:1px;margin-bottom:4px;}
+.sc-teams{font-size:16px;font-weight:700;letter-spacing:.5px;}
+.sc-venue-date{font-size:12px;color:var(--subtle);margin-top:4px;}
+.sc-actions{display:flex;gap:8px;flex-shrink:0;}
+
+/* TEAMS */
+.teams-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:.3s;}
+.team-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.team-card-banner{height:80px;display:flex;align-items:center;justify-content:center;position:relative;}
+.team-card-logo{width:70px;height:70px;border-radius:50%;border:3px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;background:rgba(0,0,0,.3);}
+.team-card-body{padding:16px;}
+.team-card-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:4px;}
+.team-card-captain{font-size:13px;color:var(--muted);}
+.team-card-stats{display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);}
+.tcs{text-align:center;}
+.tcs-val{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:700;}
+.tcs-label{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+
+/* SQUAD */
+.squad-container{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.squad-header{background:linear-gradient(135deg,#1a2a4a,#0d1a2e);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;}
+.squad-team-info{display:flex;align-items:center;gap:16px;}
+.squad-logo{width:60px;height:60px;border-radius:50%;border:3px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:24px;}
+.squad-team-name{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:2px;}
+.squad-team-captain{font-size:13px;color:var(--muted);}
+.player-list{padding:20px 24px;}
+.player-item{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);}
+.player-item:last-child{border-bottom:none;}
+.player-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#d97706);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;color:#000;flex-shrink:0;}
+.player-details{flex:1;margin-left:12px;}
+.player-pname{font-size:15px;font-weight:700;}
+.player-role{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+.player-stats-mini{display:flex;gap:12px;}
+.psm{text-align:center;}
+.psm-val{font-size:14px;font-weight:700;color:var(--accent);}
+.psm-label{font-size:10px;color:var(--muted);}
+.captain-badge{background:var(--accent);color:#000;font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;margin-left:6px;letter-spacing:1px;}
+
+/* STATS */
+.stats-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.stats-tab{padding:8px 16px;border-radius:8px;background:var(--surface);border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s;}
+.stats-tab:hover,.stats-tab.active{background:var(--accent);color:#000;border-color:var(--accent);}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.stats-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.stats-card-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--accent);margin-bottom:16px;}
+.stats-player-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(30,45,66,.5);}
+.stats-player-row:last-child{border-bottom:none;}
+.stats-rank{font-size:12px;color:var(--muted);width:20px;}
+.stats-player-name{font-size:14px;font-weight:600;flex:1;margin-left:8px;}
+.stats-player-team{font-size:11px;color:var(--muted);}
+.stats-value{font-family:'Orbitron',sans-serif;font-size:16px;font-weight:700;color:var(--accent);}
+.stats-bar-track{height:3px;background:var(--border);border-radius:2px;margin-top:4px;overflow:hidden;}
+.stats-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;}
+
+/* ADMIN MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;width:90%;max-width:900px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;}
+.modal-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:#0d1526;}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--accent);}
+.modal-close{background:none;border:1px solid var(--border);color:var(--subtle);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;}
+.modal-close:hover{background:var(--red);color:#fff;border-color:var(--red);}
+.modal-body{padding:24px;overflow-y:auto;flex:1;}
+.admin-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+.admin-tab{padding:8px 16px;border-radius:8px;background:var(--card);border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s;}
+.admin-tab:hover,.admin-tab.active{background:var(--accent);color:#000;border-color:var(--accent);}
+.admin-panel{display:none;}
+.admin-panel.active{display:block;}
+.form-group{margin-bottom:16px;}
+.form-label{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:6px;display:block;}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px 12px;border-radius:8px;outline:none;transition:.2s;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent);}
+.form-select option{background:var(--card);}
+.form-textarea{min-height:80px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.btn{padding:10px 20px;border-radius:8px;border:none;font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:1px;}
+.btn-primary{background:var(--accent);color:#000;}
+.btn-primary:hover{background:#d97706;}
+.btn-success{background:var(--accent2);color:#fff;}
+.btn-success:hover{background:#059669;}
+.btn-danger{background:var(--red);color:#fff;}
+.btn-danger:hover{background:#dc2626;}
+.btn-secondary{background:var(--border);color:var(--subtle);}
+.btn-secondary:hover{background:var(--card);}
+.btn-sm{padding:6px 12px;font-size:12px;}
+.btn-group{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.item-list{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
+.item-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.item-row-info{flex:1;}
+.item-row-name{font-weight:700;font-size:15px;}
+.item-row-sub{font-size:12px;color:var(--muted);}
+.item-row-actions{display:flex;gap:6px;}
+
+/* SCORING PANEL */
+.scoring-panel{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.score-big{font-family:'Orbitron',sans-serif;font-size:48px;font-weight:900;color:var(--text);line-height:1;}
+.score-big span{font-size:20px;color:var(--muted);}
+.current-batters{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+.batter-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px;}
+.batter-card.on-strike{border-color:var(--accent);}
+.batter-name{font-weight:700;font-size:14px;}
+.batter-score{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:700;color:var(--accent);}
+.batter-details{font-size:11px;color:var(--muted);}
+.ball-buttons{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0;}
+.ball-btn{padding:14px 8px;border-radius:8px;border:2px solid var(--border);background:var(--surface);color:var(--text);font-family:'Orbitron',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;}
+.ball-btn:hover{transform:scale(1.05);}
+.ball-btn.dot{border-color:#374151;color:var(--muted);}
+.ball-btn.run1,.ball-btn.run2,.ball-btn.run3{border-color:var(--accent3);color:var(--accent3);}
+.ball-btn.four{border-color:var(--accent2);color:var(--accent2);}
+.ball-btn.six{border-color:var(--accent);color:var(--accent);}
+.ball-btn.wicket{border-color:var(--red);color:var(--red);}
+.ball-btn.wide,.ball-btn.noball{border-color:var(--subtle);color:var(--subtle);}
+.ball-btn.lb,.ball-btn.bye{border-color:#8b5cf6;color:#8b5cf6;}
+.ball-btn:hover.dot{background:#374151;}
+.ball-btn:hover.run1,.ball-btn:hover.run2,.ball-btn:hover.run3{background:rgba(59,130,246,.15);}
+.ball-btn:hover.four{background:rgba(16,185,129,.15);}
+.ball-btn:hover.six{background:rgba(245,158,11,.15);}
+.ball-btn:hover.wicket{background:rgba(239,68,68,.15);}
+.current-bowler-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:12px;}
+.recent-balls{display:flex;gap:6px;align-items:center;}
+.recent-ball{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
+.over-summary-bar{background:var(--surface);border-radius:8px;padding:12px;margin-top:12px;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{display:none;}
+  .hero-stats{gap:16px;}
+  .form-row,.form-row-3{grid-template-columns:1fr;}
+  .ball-buttons{grid-template-columns:repeat(4,1fr);}
+  .current-batters{grid-template-columns:1fr;}
+  .header-inner{gap:12px;}
+  .logo-text{font-size:16px;}
+}
+.color-swatch-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+.color-swatch{width:32px;height:32px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.2s;}
+.color-swatch.selected{border-color:#fff;transform:scale(1.15);}
+.notification{position:fixed;top:80px;right:20px;background:var(--accent2);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;font-size:14px;z-index:300;transform:translateX(150%);transition:.3s;}
+.notification.show{transform:translateX(0);}
+.tab-bar-mobile{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);z-index:100;padding:8px 0;}
+@media(max-width:768px){.tab-bar-mobile{display:flex;justify-content:space-around;}.nav{display:none;}}
+.tab-bar-btn{display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.5px;cursor:pointer;padding:4px 8px;}
+.tab-bar-btn.active{color:var(--accent);}
+.tab-bar-icon{font-size:20px;}
+.match-detail-view{display:none;}
+.match-detail-view.active{display:block;}
+.back-btn{background:var(--surface);border:1px solid var(--border);color:var(--subtle);padding:8px 16px;border-radius:8px;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:13px;margin-bottom:16px;display:flex;align-items:center;gap:6px;}
+.back-btn:hover{border-color:var(--accent);color:var(--accent);}
+.match-detail-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:20px;overflow-x:auto;}
+.mdt{padding:12px 20px;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;border-bottom:2px solid transparent;color:var(--muted);transition:.2s;text-transform:uppercase;white-space:nowrap;}
+.mdt.active{color:var(--accent);border-bottom-color:var(--accent);}
+.mdt:hover{color:var(--text);}
+.match-not-started{text-align:center;padding:60px 20px;color:var(--muted);}
+.match-not-started .icon{font-size:64px;margin-bottom:16px;}
+.match-not-started p{font-size:16px;}
+.wagonwheel-placeholder{background:var(--surface);border-radius:50%;width:200px;height:200px;margin:0 auto;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;border:2px dashed var(--border);}
+.pg-section{margin-bottom:32px;}
+.copyright-footer{text-align:center;padding:30px 20px;border-top:1px solid var(--border);margin-top:40px;color:var(--muted);font-size:12px;letter-spacing:1px;}
+.copyright-footer strong{color:var(--accent);}
+.empty-state{text-align:center;padding:40px;color:var(--muted);}
+.empty-state .icon{font-size:48px;margin-bottom:12px;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-badge">APL</div>
+      <div>
+        <div class="logo-text">ALIVEKODI PREMIER LEAGUE</div>
+        <span class="logo-sub">SEASON 2025</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <button class="nav-btn active" onclick="showSection('home')">Home</button>
+      <button class="nav-btn" onclick="showSection('matches')">Matches</button>
+      <button class="nav-btn" onclick="showSection('points')">Points Table</button>
+      <button class="nav-btn" onclick="showSection('teams')">Teams</button>
+      <button class="nav-btn" onclick="showSection('stats')">Stats</button>
+      <button class="nav-btn" onclick="showSection('schedule')">Schedule</button>
+    </nav>
+    <button class="admin-btn" onclick="openAdmin()">⚙ Admin Panel</button>
+  </div>
+</header>
+
+<!-- MOBILE TAB BAR -->
+<div class="tab-bar-mobile">
+  <button class="tab-bar-btn active" onclick="showSection('home')"><span class="tab-bar-icon">🏠</span>Home</button>
+  <button class="tab-bar-btn" onclick="showSection('matches')"><span class="tab-bar-icon">🏏</span>Matches</button>
+  <button class="tab-bar-btn" onclick="showSection('points')"><span class="tab-bar-icon">📊</span>Points</button>
+  <button class="tab-bar-btn" onclick="showSection('teams')"><span class="tab-bar-icon">👥</span>Teams</button>
+  <button class="tab-bar-btn" onclick="showSection('stats')"><span class="tab-bar-icon">🏆</span>Stats</button>
+</div>
+
+<!-- NOTIFICATION -->
+<div class="notification" id="notification"></div>
+
+<!-- MAIN -->
+<div class="main" style="padding-bottom:80px;">
+
+  <!-- HOME SECTION -->
+  <section class="section active" id="sec-home">
+    <div class="hero">
+      <div class="hero-title">ALIVEKODI PREMIER LEAGUE 2025</div>
+      <div class="hero-sub">⚡ THE ULTIMATE LOCAL CRICKET EXPERIENCE</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-val" id="stat-teams">0</div><div class="hero-stat-label">Teams</div></div>
+        <div class="hero-stat"><div class="hero-stat-val" id="stat-matches">0</div><div class="hero-stat-label">Matches</div></div>
+        <div class="hero-stat"><div class="hero-stat-val" id="stat-players">0</div><div class="hero-stat-label">Players</div></div>
+        <div class="hero-stat"><div class="hero-stat-val" id="stat-sixes">0</div><div class="hero-stat-label">Sixes</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--accent);margin-bottom:12px;">LIVE & RECENT MATCHES</h3>
+    <div class="live-matches-grid" id="home-matches-grid">
+      <div class="empty-state"><div class="icon">🏏</div><p>No matches yet. Add matches from Admin Panel.</p></div>
+    </div>
+  </section>
+
+  <!-- MATCHES SECTION -->
+  <section class="section" id="sec-matches">
+    <div class="match-detail-view" id="match-detail">
+      <button class="back-btn" onclick="closeMatchDetail()">← Back to Matches</button>
+      <div id="match-detail-content"></div>
+    </div>
+    <div id="matches-list-view">
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:20px;color:var(--accent);">ALL MATCHES</h2>
+      <div class="live-matches-grid" id="all-matches-grid">
+        <div class="empty-state"><div class="icon">🏏</div><p>No matches yet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POINTS TABLE -->
+  <section class="section" id="sec-points">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:20px;color:var(--accent);">POINTS TABLE</h2>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;overflow-x:auto;">
+      <table class="points-table" id="points-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Team</th>
+            <th>P</th>
+            <th>W</th>
+            <th>L</th>
+            <th>NR</th>
+            <th>Pts</th>
+            <th>NRR</th>
+            <th>Form</th>
+          </tr>
+        </thead>
+        <tbody id="points-tbody">
+          <tr><td colspan="9" class="empty-state">No data yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TEAMS SECTION -->
+  <section class="section" id="sec-teams">
+    <div id="teams-list-view">
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:20px;color:var(--accent);">TEAMS</h2>
+      <div class="teams-grid" id="teams-grid">
+        <div class="empty-state"><div class="icon">👥</div><p>No teams yet.</p></div>
+      </div>
+    </div>
+    <div id="team-detail-view" style="display:none;">
+      <button class="back-btn" onclick="closeTeamDetail()">← Back to Teams</button>
+      <div id="team-detail-content"></div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="section" id="sec-stats">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:20px;color:var(--accent);">TOURNAMENT STATISTICS</h2>
+    <div class="stats-tabs">
+      <button class="stats-tab active" onclick="showStatsTab('batting')">Batting</button>
+      <button class="stats-tab" onclick="showStatsTab('bowling')">Bowling</button>
+    </div>
+    <div id="stats-batting" class="stats-grid"></div>
+    <div id="stats-bowling" class="stats-grid" style="display:none;"></div>
+  </section>
+
+  <!-- SCHEDULE SECTION -->
+  <section class="section" id="sec-schedule">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;margin-bottom:20px;color:var(--accent);">MATCH SCHEDULE</h2>
+    <div id="schedule-list">
+      <div class="empty-state"><div class="icon">📅</div><p>No scheduled matches.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ADMIN MODAL -->
+<div class="modal-overlay" id="admin-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">⚙ ADMIN CONTROL PANEL</div>
+      <button class="modal-close" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="showAdminTab('teams')">🏏 Teams</button>
+        <button class="admin-tab" onclick="showAdminTab('players')">👤 Players</button>
+        <button class="admin-tab" onclick="showAdminTab('matches')">📅 Matches</button>
+        <button class="admin-tab" onclick="showAdminTab('scoring')">⚡ Live Score</button>
+        <button class="admin-tab" onclick="showAdminTab('tournament')">🏆 Tournament</button>
+      </div>
+
+      <!-- TEAMS PANEL -->
+      <div class="admin-panel active" id="panel-teams">
+        <h3 style="color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:20px;margin-bottom:16px;">ADD / EDIT TEAM</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Team Name *</label>
+            <input class="form-input" id="t-name" placeholder="e.g. Royal Challengers Alivekodi">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Short Name (3 letters)</label>
+            <input class="form-input" id="t-short" placeholder="RCA" maxlength="4">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Captain Name</label>
+            <input class="form-input" id="t-captain" placeholder="Captain name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Home Ground</label>
+            <input class="form-input" id="t-ground" placeholder="Ground name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Team Color</label>
+          <div class="color-swatch-row" id="color-swatches">
+            <div class="color-swatch selected" style="background:#ef4444;" data-color="#ef4444" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#3b82f6;" data-color="#3b82f6" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#f59e0b;" data-color="#f59e0b" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#10b981;" data-color="#10b981" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#8b5cf6;" data-color="#8b5cf6" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#ec4899;" data-color="#ec4899" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#06b6d4;" data-color="#06b6d4" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#84cc16;" data-color="#84cc16" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#f97316;" data-color="#f97316" onclick="selectColor(this)"></div>
+            <div class="color-swatch" style="background:#14b8a6;" data-color="#14b8a6" onclick="selectColor(this)"></div>
+          </div>
+          <input class="form-input" id="t-color" value="#ef4444" style="margin-top:8px;" placeholder="#hex or color name">
+        </div>
+        <input type="hidden" id="t-edit-id" value="">
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="saveTeam()">💾 Save Team</button>
+          <button class="btn btn-secondary" onclick="clearTeamForm()">Clear</button>
+        </div>
+        <div class="item-list" id="team-list"></div>
+      </div>
+
+      <!-- PLAYERS PANEL -->
+      <div class="admin-panel" id="panel-players">
+        <h3 style="color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:20px;margin-bottom:16px;">ADD / EDIT PLAYER</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Player Name *</label>
+            <input class="form-input" id="p-name" placeholder="Full Name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Team *</label>
+            <select class="form-select" id="p-team"></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Role</label>
+            <select class="form-select" id="p-role">
+              <option value="Batsman">Batsman</option>
+              <option value="Bowler">Bowler</option>
+              <option value="All-Rounder">All-Rounder</option>
+              <option value="WK-Batsman">WK-Batsman</option>
+              <option value="WK-Bowler">WK-Bowler</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Batting Style</label>
+            <select class="form-select" id="p-bat">
+              <option value="Right Hand Bat">Right Hand Bat</option>
+              <option value="Left Hand Bat">Left Hand Bat</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Bowling Style</label>
+            <select class="form-select" id="p-bowl">
+              <option value="Right Arm Fast">Right Arm Fast</option>
+              <option value="Right Arm Medium">Right Arm Medium</option>
+              <option value="Left Arm Fast">Left Arm Fast</option>
+              <option value="Left Arm Medium">Left Arm Medium</option>
+              <option value="Right Arm Off Break">Right Arm Off Break</option>
+              <option value="Right Arm Leg Break">Right Arm Leg Break</option>
+              <option value="Left Arm Spin">Left Arm Spin</option>
+              <option value="N/A">N/A</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Jersey Number</label>
+            <input class="form-input" id="p-jersey" placeholder="e.g. 7" type="number">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Is Captain?</label>
+          <select class="form-select" id="p-is-captain">
+            <option value="no">No</option>
+            <option value="yes">Yes (Captain)</option>
+            <option value="vc">Vice Captain</option>
+          </select>
+        </div>
+        <input type="hidden" id="p-edit-id" value="">
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="savePlayer()">💾 Save Player</button>
+          <button class="btn btn-secondary" onclick="clearPlayerForm()">Clear</button>
+        </div>
+        <div style="margin-top:16px;">
+          <label class="form-label">Filter by Team:</label>
+          <select class="form-select" id="p-filter-team" onchange="renderPlayerList()" style="width:auto;display:inline-block;margin-left:8px;">
+            <option value="all">All Teams</option>
+          </select>
+        </div>
+        <div class="item-list" id="player-list"></div>
+      </div>
+
+      <!-- MATCHES PANEL -->
+      <div class="admin-panel" id="panel-matches">
+        <h3 style="color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:20px;margin-bottom:16px;">ADD / EDIT MATCH</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Team 1 *</label>
+            <select class="form-select" id="m-team1"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Team 2 *</label>
+            <select class="form-select" id="m-team2"></select>
+          </div>
+        </div>
+        <div class="form-row-3">
+          <div class="form-group">
+            <label class="form-label">Match Date *</label>
+            <input class="form-input" id="m-date" type="date">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Match Time</label>
+            <input class="form-input" id="m-time" type="time">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Overs</label>
+            <input class="form-input" id="m-overs" type="number" value="20" min="1" max="50">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Venue</label>
+            <input class="form-input" id="m-venue" placeholder="Match venue / ground">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Match Type</label>
+            <select class="form-select" id="m-type">
+              <option value="League">League Match</option>
+              <option value="Quarter Final">Quarter Final</option>
+              <option value="Semi Final">Semi Final</option>
+              <option value="Final">Final</option>
+              <option value="Practice">Practice Match</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Toss Won By</label>
+            <select class="form-select" id="m-toss-winner">
+              <option value="">-- Not decided --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Toss Decision</label>
+            <select class="form-select" id="m-toss-decision">
+              <option value="">-- --</option>
+              <option value="bat">Elected to Bat</option>
+              <option value="bowl">Elected to Bowl</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Match Status</label>
+          <select class="form-select" id="m-status">
+            <option value="upcoming">Upcoming</option>
+            <option value="live">Live</option>
+            <option value="completed">Completed</option>
+            <option value="abandoned">Abandoned</option>
+          </select>
+        </div>
+        <input type="hidden" id="m-edit-id" value="">
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="saveMatch()">💾 Save Match</button>
+          <button class="btn btn-secondary" onclick="clearMatchForm()">Clear</button>
+        </div>
+        <div class="item-list" id="match-admin-list"></div>
+      </div>
+
+      <!-- SCORING PANEL -->
+      <div class="admin-panel" id="panel-scoring">
+        <h3 style="color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:20px;margin-bottom:16px;">⚡ LIVE BALL-BY-BALL SCORING</h3>
+        <div class="form-group">
+          <label class="form-label">Select Live Match</label>
+          <select class="form-select" id="sc-match-select" onchange="loadMatchForScoring()"></select>
+        </div>
+        <div id="scoring-area" style="display:none;">
+          <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+            <div class="form-group" style="flex:1;min-width:150px;">
+              <label class="form-label">Batting Team</label>
+              <div id="sc-batting-team" style="font-weight:700;font-size:16px;padding:10px;background:var(--surface);border-radius:8px;border:1px solid var(--border);"></div>
+            </div>
+            <div class="form-group" style="flex:1;min-width:150px;">
+              <label class="form-label">Select Innings</label>
+              <select class="form-select" id="sc-innings-select" onchange="switchInnings()">
+                <option value="1">1st Innings</option>
+                <option value="2">2nd Innings</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+            <div class="form-group">
+              <label class="form-label">Striker (On Strike)</label>
+              <select class="form-select" id="sc-striker"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Non-Striker</label>
+              <select class="form-select" id="sc-non-striker"></select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Current Bowler</label>
+            <select class="form-select" id="sc-bowler"></select>
+          </div>
+
+          <div class="scoring-panel">
+            <div style="text-align:center;margin-bottom:8px;">
+              <div id="sc-big-score" class="score-big">0/0 <span>0.0 ov</span></div>
+              <div id="sc-target-info" style="font-size:13px;color:var(--accent);margin-top:4px;"></div>
+            </div>
+            <div style="margin-bottom:12px;">
+              <div class="form-label" style="margin-bottom:6px;">Recent Balls</div>
+              <div class="recent-balls" id="sc-recent-balls"></div>
+            </div>
+
+            <div class="ball-buttons">
+              <button class="ball-btn dot" onclick="addBall('0','Dot ball')">•</button>
+              <button class="ball-btn run1" onclick="addBall('1','1 run')">1</button>
+              <button class="ball-btn run1" onclick="addBall('2','2 runs')">2</button>
+              <button class="ball-btn run1" onclick="addBall('3','3 runs')">3</button>
+              <button class="ball-btn four" onclick="addBall('4','FOUR!')">4</button>
+              <button class="ball-btn six" onclick="addBall('6','SIX!')">6</button>
+              <button class="ball-btn wide" onclick="addBall('Wd','Wide ball')">Wd</button>
+              <button class="ball-btn noball" onclick="addBall('Nb','No ball')">Nb</button>
+              <button class="ball-btn lb" onclick="addBall('Lb','Leg bye')">Lb</button>
+              <button class="ball-btn bye" onclick="addBall('By','Bye')">By</button>
+              <button class="ball-btn wicket" onclick="addBall('W','WICKET!')">W</button>
+            </div>
+
+            <div style="display:flex;gap:8px;margin-top:8px;">
+              <button class="btn btn-danger btn-sm" onclick="undoBall()">↩ Undo Last Ball</button>
+              <button class="btn btn-secondary btn-sm" onclick="endInnings()">End Innings</button>
+            </div>
+          </div>
+
+          <!-- Wicket Modal -->
+          <div id="wicket-modal" style="display:none;background:var(--surface);border:1px solid var(--red);border-radius:12px;padding:20px;margin-top:16px;">
+            <h4 style="color:var(--red);margin-bottom:12px;">🏏 WICKET — Enter Details</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Dismissal Type</label>
+                <select class="form-select" id="wkt-type">
+                  <option value="Bowled">Bowled</option>
+                  <option value="Caught">Caught</option>
+                  <option value="LBW">LBW</option>
+                  <option value="Run Out">Run Out</option>
+                  <option value="Stumped">Stumped</option>
+                  <option value="Hit Wicket">Hit Wicket</option>
+                  <option value="Retired">Retired</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Fielder (if caught/run-out)</label>
+                <select class="form-select" id="wkt-fielder"></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">New Batsman</label>
+              <select class="form-select" id="wkt-new-bat"></select>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-danger" onclick="confirmWicket()">Confirm Wicket</button>
+              <button class="btn btn-secondary" onclick="cancelWicket()">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOURNAMENT PANEL -->
+      <div class="admin-panel" id="panel-tournament">
+        <h3 style="color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:20px;margin-bottom:16px;">🏆 TOURNAMENT SETTINGS</h3>
+        <div class="form-group">
+          <label class="form-label">Tournament Name</label>
+          <input class="form-input" id="trn-name" value="Alivekodi Premier League 2025">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Season</label>
+            <input class="form-input" id="trn-season" value="2025">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Host Ground</label>
+            <input class="form-input" id="trn-ground" placeholder="Main venue / ground">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Start Date</label>
+            <input class="form-input" id="trn-start" type="date">
+          </div>
+          <div class="form-group">
+            <label class="form-label">End Date</label>
+            <input class="form-input" id="trn-end" type="date">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Default Overs</label>
+          <input class="form-input" id="trn-overs" type="number" value="20">
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="saveTournament()">💾 Save Settings</button>
+          <button class="btn btn-danger" onclick="if(confirm('RESET ALL DATA? This cannot be undone!')) resetAll()">⚠ Reset All Data</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="copyright-footer">
+  © 2025 <strong>MAHESHTARAPATHI</strong> · All Rights Reserved · Alivekodi Premier League
+</div>
+
+<script>
+// ===== DATA STORE =====
+let DB = {
+  tournament: { name: 'Alivekodi Premier League 2025', season: '2025', ground: '', start: '', end: '', overs: 20 },
+  teams: [],
+  players: [],
+  matches: []
+};
+
+let selectedColor = '#ef4444';
+let scoringState = {
+  matchId: null, innings: 1, striker: null, nonStriker: null, bowler: null,
+  pendingWicket: false
+};
+
+// ===== LOAD/SAVE =====
+function loadDB() {
+  try { const d = localStorage.getItem('apl2025'); if(d) DB = JSON.parse(d); } catch(e) {}
+  updateHeroStats();
+}
+function saveDB() {
+  localStorage.setItem('apl2025', JSON.stringify(DB));
+  updateHeroStats();
+  renderAll();
+}
+function resetAll() {
+  DB = { tournament: DB.tournament, teams: [], players: [], matches: [] };
+  saveDB(); notify('All match/team/player data reset!');
+}
+
+// ===== NOTIFY =====
+function notify(msg, type='success') {
+  const el = document.getElementById('notification');
+  el.textContent = msg;
+  el.style.background = type === 'error' ? 'var(--red)' : 'var(--accent2)';
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+// ===== HERO STATS =====
+function updateHeroStats() {
+  document.getElementById('stat-teams').textContent = DB.teams.length;
+  document.getElementById('stat-matches').textContent = DB.matches.length;
+  document.getElementById('stat-players').textContent = DB.players.length;
+  let sixes = 0;
+  DB.matches.forEach(m => {
+    [m.innings1, m.innings2].forEach(inn => {
+      if(inn) inn.balls.forEach(b => { if(b.runs === '6') sixes++; });
+    });
+  });
+  document.getElementById('stat-sixes').textContent = sixes;
+}
+
+// ===== SECTION NAV =====
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const btns = document.querySelectorAll('.nav-btn');
+  btns.forEach(b => { if(b.textContent.toLowerCase().includes(id.substring(0,4))) b.classList.add('active'); });
+  document.querySelectorAll('.tab-bar-btn').forEach(b => b.classList.remove('active'));
+  renderAll();
+}
+
+// ===== COLORS =====
+function selectColor(el) {
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedColor = el.dataset.color;
+  document.getElementById('t-color').value = selectedColor;
+}
+
+// ===== ADMIN =====
+function openAdmin() {
+  document.getElementById('admin-modal').classList.add('open');
+  populateAdminDropdowns();
+  renderTeamList(); renderPlayerList(); renderMatchAdminList();
+}
+function closeAdmin() { document.getElementById('admin-modal').classList.remove('open'); renderAll(); }
+function showAdminTab(tab) {
+  document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  event.target.classList.add('active');
+  if(tab === 'players') populatePlayerDropdowns();
+  if(tab === 'matches') populateMatchDropdowns();
+  if(tab === 'scoring') populateScoringDropdowns();
+}
+
+// ===== TEAMS =====
+function saveTeam() {
+  const name = document.getElementById('t-name').value.trim();
+  const shortName = document.getElementById('t-short').value.trim().toUpperCase();
+  const captain = document.getElementById('t-captain').value.trim();
+  const ground = document.getElementById('t-ground').value.trim();
+  const color = document.getElementById('t-color').value.trim() || selectedColor;
+  const editId = document.getElementById('t-edit-id').value;
+  if(!name) { notify('Team name required','error'); return; }
+  if(editId) {
+    const t = DB.teams.find(t => t.id == editId);
+    if(t) { t.name = name; t.shortName = shortName||name.substring(0,3).toUpperCase(); t.captain = captain; t.ground = ground; t.color = color; }
+    document.getElementById('t-edit-id').value = '';
+  } else {
+    DB.teams.push({ id: Date.now(), name, shortName: shortName||name.substring(0,3).toUpperCase(), captain, ground, color, played:0, won:0, lost:0, nr:0, pts:0, nrr:0, form:[] });
+  }
+  saveDB(); renderTeamList(); clearTeamForm(); notify('Team saved!');
+}
+function clearTeamForm() {
+  ['t-name','t-short','t-captain','t-ground','t-edit-id'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('t-color').value = '#ef4444';
+}
+function editTeam(id) {
+  const t = DB.teams.find(t => t.id == id);
+  if(!t) return;
+  document.getElementById('t-name').value = t.name;
+  document.getElementById('t-short').value = t.shortName;
+  document.getElementById('t-captain').value = t.captain||'';
+  document.getElementById('t-ground').value = t.ground||'';
+  document.getElementById('t-color').value = t.color||'#ef4444';
+  document.getElementById('t-edit-id').value = t.id;
+  selectedColor = t.color||'#ef4444';
+}
+function deleteTeam(id) {
+  if(!confirm('Delete team?')) return;
+  DB.teams = DB.teams.filter(t => t.id != id);
+  DB.players = DB.players.filter(p => p.teamId != id);
+  saveDB(); renderTeamList(); notify('Team deleted!');
+}
+function renderTeamList() {
+  const el = document.getElementById('team-list');
+  if(!DB.teams.length) { el.innerHTML = '<div class="empty-state">No teams yet</div>'; return; }
+  el.innerHTML = DB.teams.map(t => `
+    <div class="item-row">
+      <div style="width:14px;height:40px;background:${t.color};border-radius:4px;margin-right:12px;flex-shrink:0;"></div>
+      <div class="item-row-info">
+        <div class="item-row-name">${t.name} <span style="color:var(--muted);font-size:12px;">(${t.shortName})</span></div>
+        <div class="item-row-sub">${t.captain ? 'Captain: '+t.captain : ''} · ${DB.players.filter(p=>p.teamId==t.id).length} players</div>
+      </div>
+      <div class="item-row-actions">
+        <button class="btn btn-sm btn-secondary" onclick="editTeam(${t.id})">✏</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteTeam(${t.id})">🗑</button>
+      </div>
+    </div>`).join('');
+}
+
+// ===== PLAYERS =====
+function populatePlayerDropdowns() {
+  const sel = document.getElementById('p-team');
+  sel.innerHTML = '<option value="">Select Team</option>' + DB.teams.map(t => `<option value="${t.id}">${t.name}</option>`).join('');
+  const fsel = document.getElementById('p-filter-team');
+  fsel.innerHTML = '<option value="all">All Teams</option>' + DB.teams.map(t => `<option value="${t.id}">${t.name}</option>`).join('');
+}
+function savePlayer() {
+  const name = document.getElementById('p-name').value.trim();
+  const teamId = parseInt(document.getElementById('p-team').value);
+  const role = document.getElementById('p-role').value;
+  const bat = document.getElementById('p-bat').value;
+  const bowl = document.getElementById('p-bowl').value;
+  const jersey = document.getElementById('p-jersey').value;
+  const isCap = document.getElementById('p-is-captain').value;
+  const editId = document.getElementById('p-edit-id').value;
+  if(!name||!teamId) { notify('Name and team required','error'); return; }
+  if(editId) {
+    const p = DB.players.find(p => p.id == editId);
+    if(p) { p.name=name; p.teamId=teamId; p.role=role; p.bat=bat; p.bowl=bowl; p.jersey=jersey; p.isCap=isCap; }
+    document.getElementById('p-edit-id').value = '';
+  } else {
+    DB.players.push({ id:Date.now(), name, teamId, role, bat, bowl, jersey, isCap,
+      stats:{ runs:0, balls:0, fours:0, sixes:0, fifties:0, hundreds:0, inns:0, notOuts:0, hs:0,
+              wkts:0, overs:0, runs_given:0, maidens:0, dots:0, economy:0 } });
+  }
+  saveDB(); renderPlayerList(); clearPlayerForm(); notify('Player saved!');
+}
+function clearPlayerForm() {
+  ['p-name','p-jersey','p-edit-id'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('p-is-captain').value = 'no';
+}
+function editPlayer(id) {
+  const p = DB.players.find(p => p.id == id);
+  if(!p) return;
+  document.getElementById('p-name').value = p.name;
+  document.getElementById('p-team').value = p.teamId;
+  document.getElementById('p-role').value = p.role;
+  document.getElementById('p-bat').value = p.bat;
+  document.getElementById('p-bowl').value = p.bowl;
+  document.getElementById('p-jersey').value = p.jersey||'';
+  document.getElementById('p-is-captain').value = p.isCap||'no';
+  document.getElementById('p-edit-id').value = p.id;
+}
+function deletePlayer(id) {
+  if(!confirm('Delete player?')) return;
+  DB.players = DB.players.filter(p => p.id != id);
+  saveDB(); renderPlayerList(); notify('Player deleted!');
+}
+function renderPlayerList() {
+  const el = document.getElementById('player-list');
+  const filter = document.getElementById('p-filter-team').value;
+  let players = DB.players;
+  if(filter !== 'all') players = players.filter(p => p.teamId == filter);
+  if(!players.length) { el.innerHTML = '<div class="empty-state">No players yet</div>'; return; }
+  el.innerHTML = players.map(p => {
+    const team = DB.teams.find(t => t.id == p.teamId);
+    return `<div class="item-row">
+      <div class="item-row-info">
+        <div class="item-row-name">${p.name} ${p.isCap==='yes'?'<span class="captain-badge">C</span>':p.isCap==='vc'?'<span class="captain-badge" style="background:var(--accent3);color:#fff;">VC</span>':''}</div>
+        <div class="item-row-sub">${team?team.name:'?'} · ${p.role} · ${p.bat} · ${p.bowl}</div>
+      </div>
+      <div class="item-row-actions">
+        <button class="btn btn-sm btn-secondary" onclick="editPlayer(${p.id})">✏</button>
+        <button class="btn btn-sm btn-danger" onclick="deletePlayer(${p.id})">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ===== MATCHES =====
+function populateMatchDropdowns() {
+  const topts = '<option value="">Select Team</option>' + DB.teams.map(t => `<option value="${t.id}">${t.name}</option>`).join('');
+  document.getElementById('m-team1').innerHTML = topts;
+  document.getElementById('m-team2').innerHTML = topts;
+  document.getElementById('m-toss-winner').innerHTML = '<option value="">-- Not decided --</option>' + DB.teams.map(t => `<option value="${t.id}">${t.name}</option>`).join('');
+}
+function saveMatch() {
+  const t1 = parseInt(document.getElementById('m-team1').value);
+  const t2 = parseInt(document.getElementById('m-team2').value);
+  const date = document.getElementById('m-date').value;
+  const time = document.getElementById('m-time').value;
+  const venue = document.getElementById('m-venue').value.trim();
+  const type = document.getElementById('m-type').value;
+  const status = document.getElementById('m-status').value;
+  const overs = parseInt(document.getElementById('m-overs').value)||20;
+  const tossWinner = document.getElementById('m-toss-winner').value;
+  const tossDecision = document.getElementById('m-toss-decision').value;
+  const editId = document.getElementById('m-edit-id').value;
+  if(!t1||!t2||!date) { notify('Teams and date required','error'); return; }
+  if(t1===t2) { notify('Different teams required','error'); return; }
+  if(editId) {
+    const m = DB.matches.find(m => m.id == editId);
+    if(m) { m.team1Id=t1; m.team2Id=t2; m.date=date; m.time=time; m.venue=venue; m.type=type; m.status=status; m.overs=overs; m.tossWinner=tossWinner||null; m.tossDecision=tossDecision||null; }
+    document.getElementById('m-edit-id').value = '';
+  } else {
+    DB.matches.push({ id:Date.now(), team1Id:t1, team2Id:t2, date, time, venue, type, status, overs,
+      tossWinner:tossWinner||null, tossDecision:tossDecision||null,
+      innings1:null, innings2:null, result:null });
+  }
+  saveDB(); renderMatchAdminList(); clearMatchForm(); notify('Match saved!');
+}
+function clearMatchForm() {
+  ['m-team1','m-team2','m-date','m-time','m-venue','m-edit-id'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('m-status').value = 'upcoming';
+  document.getElementById('m-overs').value = 20;
+}
+function editMatch(id) {
+  const m = DB.matches.find(m => m.id == id);
+  if(!m) return;
+  document.getElementById('m-team1').value = m.team1Id;
+  document.getElementById('m-team2').value = m.team2Id;
+  document.getElementById('m-date').value = m.date;
+  document.getElementById('m-time').value = m.time||'';
+  document.getElementById('m-venue').value = m.venue||'';
+  document.getElementById('m-type').value = m.type||'League';
+  document.getElementById('m-status').value = m.status||'upcoming';
+  document.getElementById('m-overs').value = m.overs||20;
+  document.getElementById('m-toss-winner').value = m.tossWinner||'';
+  document.getElementById('m-toss-decision').value = m.tossDecision||'';
+  document.getElementById('m-edit-id').value = m.id;
+}
+function deleteMatch(id) {
+  if(!confirm('Delete match?')) return;
+  DB.matches = DB.matches.filter(m => m.id != id);
+  saveDB(); renderMatchAdminList(); notify('Match deleted!');
+}
+function renderMatchAdminList() {
+  const el = document.getElementById('match-admin-list');
+  if(!DB.matches.length) { el.innerHTML = '<div class="empty-state">No matches yet</div>'; return; }
+  el.innerHTML = DB.matches.map(m => {
+    const t1 = DB.teams.find(t => t.id == m.team1Id);
+    const t2 = DB.teams.find(t => t.id == m.team2Id);
+    return `<div class="item-row">
+      <div class="item-row-info">
+        <div class="item-row-name">${t1?t1.name:'?'} vs ${t2?t2.name:'?'}</div>
+        <div class="item-row-sub">${m.date} ${m.time||''} · ${m.venue||'TBD'} · ${m.type} · <span style="color:${statusColor(m.status)}">${m.status.toUpperCase()}</span></div>
+      </div>
+      <div class="item-row-actions">
+        <button class="btn btn-sm btn-secondary" onclick="editMatch(${m.id})">✏</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteMatch(${m.id})">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+function statusColor(s) {
+  return s==='live'?'var(--red)':s==='completed'?'var(--accent2)':s==='abandoned'?'var(--muted)':'var(--accent3)';
+}
+
+// ===== LIVE SCORING =====
+function populateScoringDropdowns() {
+  const liveMatches = DB.matches.filter(m => m.status === 'live');
+  const sel = document.getElementById('sc-match-select');
+  sel.innerHTML = '<option value="">-- Select Match --</option>' + liveMatches.map(m => {
+    const t1 = DB.teams.find(t => t.id == m.team1Id);
+    const t2 = DB.teams.find(t => t.id == m.team2Id);
+    return `<option value="${m.id}">${t1?t1.name:'?'} vs ${t2?t2.name:'?'} (${m.date})</option>`;
+  }).join('');
+}
+function loadMatchForScoring() {
+  const matchId = parseInt(document.getElementById('sc-match-select').value);
+  if(!matchId) { document.getElementById('scoring-area').style.display='none'; return; }
+  scoringState.matchId = matchId;
+  const m = DB.matches.find(m => m.id == matchId);
+  if(!m) return;
+  if(!m.innings1) m.innings1 = createInnings(m.team1Id, m.team2Id);
+  if(!m.innings2) m.innings2 = createInnings(m.team2Id, m.team1Id);
+  document.getElementById('scoring-area').style.display='block';
+  updateScoringUI();
+  saveDB();
+}
+function createInnings(battingTeamId, bowlingTeamId) {
+  return { battingTeamId, bowlingTeamId, balls:[], batters:{}, bowlers:{}, extras:{wides:0,nbs:0,byes:0,lbs:0}, currentBatterIds:[], currentBowlerId:null, completed:false };
+}
+function getCurrentInnings() {
+  const m = DB.matches.find(m => m.id == scoringState.matchId);
+  if(!m) return null;
+  return scoringState.innings === 1 ? m.innings1 : m.innings2;
+}
+function switchInnings() {
+  scoringState.innings = parseInt(document.getElementById('sc-innings-select').value);
+  updateScoringUI();
+}
+function updateScoringUI() {
+  const inn = getCurrentInnings();
+  const m = DB.matches.find(m => m.id == scoringState.matchId);
+  if(!inn||!m) return;
+  const battingTeam = DB.teams.find(t => t.id == inn.battingTeamId);
+  const bowlingTeam = DB.teams.find(t => t.id == inn.bowlingTeamId);
+  document.getElementById('sc-batting-team').textContent = battingTeam ? battingTeam.name + ' (Batting)' : '?';
+  // Populate batters
+  const batPlayers = DB.players.filter(p => p.teamId == inn.battingTeamId);
+  const bowlPlayers = DB.players.filter(p => p.teamId == inn.bowlingTeamId);
+  const batOpts = batPlayers.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  const bowlOpts = bowlPlayers.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  document.getElementById('sc-striker').innerHTML = batOpts;
+  document.getElementById('sc-non-striker').innerHTML = batOpts;
+  document.getElementById('sc-bowler').innerHTML = bowlOpts;
+  // Load current batters/bowler if set
+  if(inn.currentBatterIds[0]) document.getElementById('sc-striker').value = inn.currentBatterIds[0];
+  if(inn.currentBatterIds[1]) document.getElementById('sc-non-striker').value = inn.currentBatterIds[1];
+  if(inn.currentBowlerId) document.getElementById('sc-bowler').value = inn.currentBowlerId;
+  renderScoringScore();
+  // Wicket fields
+  document.getElementById('wkt-fielder').innerHTML = bowlOpts;
+  document.getElementById('wkt-new-bat').innerHTML = batOpts;
+}
+function getInningsScore(inn) {
+  if(!inn) return { runs:0, wkts:0, balls:0, overs:'0.0', extras:0 };
+  let runs=0, wkts=0, balls=0;
+  inn.balls.forEach(b => {
+    if(b.runs==='W') wkts++;
+    else if(['Wd','Nb'].includes(b.runs)) runs++;
+    else if(['Lb','By'].includes(b.runs)) { runs+=1; balls++; }
+    else { runs+=parseInt(b.runs)||0; balls++; }
+    if(['Wd','Nb'].includes(b.runs)) {} else {}
+    // extras
+  });
+  // recount properly
+  runs=0; wkts=0; balls=0;
+  inn.balls.forEach(b => {
+    if(b.runs==='W') { wkts++; balls++; }
+    else if(b.runs==='Wd') { runs+=1; }
+    else if(b.runs==='Nb') { runs+=1; }
+    else if(b.runs==='Lb'||b.runs==='By') { runs+=1; balls++; }
+    else { runs+=parseInt(b.runs)||0; balls++; }
+  });
+  const ov = Math.floor(balls/6) + '.' + (balls%6);
+  return { runs, wkts, balls, overs:ov, extras:0 };
+}
+function renderScoringScore() {
+  const inn = getCurrentInnings();
+  if(!inn) return;
+  const s = getInningsScore(inn);
+  document.getElementById('sc-big-score').innerHTML = `${s.runs}/${s.wkts} <span>${s.overs} ov</span>`;
+  // Recent balls
+  const recent = inn.balls.slice(-6);
+  const rb = document.getElementById('sc-recent-balls');
+  rb.innerHTML = recent.map(b => {
+    let cls = 'ball-'+b.runs; let label = b.runs;
+    if(b.runs==='0') { cls='ball-0'; label='•'; }
+    return `<div class="recent-ball ${cls}">${label}</div>`;
+  }).join('');
+  // Target info for 2nd innings
+  if(scoringState.innings===2) {
+    const m = DB.matches.find(m => m.id==scoringState.matchId);
+    if(m && m.innings1) {
+      const s1 = getInningsScore(m.innings1);
+      const target = s1.runs + 1;
+      const needed = target - s.runs;
+      const ballsLeft = (m.overs*6) - s.balls;
+      document.getElementById('sc-target-info').textContent = `Target: ${target} | Need ${needed} in ${ballsLeft} balls`;
+    }
+  } else {
+    document.getElementById('sc-target-info').textContent = '';
+  }
+}
+function addBall(runVal, desc) {
+  const inn = getCurrentInnings();
+  if(!inn) { notify('Select a match first','error'); return; }
+  const strikerId = parseInt(document.getElementById('sc-striker').value);
+  const nonStrikerId = parseInt(document.getElementById('sc-non-striker').value);
+  const bowlerId = parseInt(document.getElementById('sc-bowler').value);
+  if(!strikerId||!bowlerId) { notify('Select striker and bowler','error'); return; }
+  inn.currentBatterIds = [strikerId, nonStrikerId];
+  inn.currentBowlerId = bowlerId;
+  if(runVal === 'W') {
+    document.getElementById('wicket-modal').style.display='block';
+    scoringState.pendingWicket = true;
+    return;
+  }
+  const ball = { runs: runVal, strikerId, nonStrikerId, bowlerId, over: getOverNumber(inn), desc };
+  inn.balls.push(ball);
+  // Rotate strike on odd runs
+  if(['1','3'].includes(runVal)) { rotatestrike(); }
+  // Rotate strike at end of over
+  const s = getInningsScore(inn);
+  if(s.balls % 6 === 0 && s.balls > 0) { rotatestrike(); }
+  const m = DB.matches.find(m => m.id == scoringState.matchId);
+  saveDB(); renderScoringScore();
+}
+function rotatestrike() {
+  const s = document.getElementById('sc-striker').value;
+  const n = document.getElementById('sc-non-striker').value;
+  document.getElementById('sc-striker').value = n;
+  document.getElementById('sc-non-striker').value = s;
+}
+function getOverNumber(inn) {
+  let balls = inn.balls.filter(b => !['Wd','Nb'].includes(b.runs)).length;
+  return Math.floor(balls/6) + '.' + (balls%6);
+}
+function confirmWicket() {
+  const inn = getCurrentInnings();
+  if(!inn) return;
+  const strikerId = parseInt(document.getElementById('sc-striker').value);
+  const bowlerId = parseInt(document.getElementById('sc-bowler').value);
+  const type = document.getElementById('wkt-type').value;
+  const fielderId = document.getElementById('wkt-fielder').value;
+  const newBatId = parseInt(document.getElementById('wkt-new-bat').value);
+  const ball = { runs:'W', strikerId, bowlerId, type, fielderId, over:getOverNumber(inn), desc:`Wicket! ${type}` };
+  inn.balls.push(ball);
+  document.getElementById('wicket-modal').style.display='none';
+  scoringState.pendingWicket = false;
+  // Switch new batsman in
+  document.getElementById('sc-striker').value = newBatId;
+  saveDB(); renderScoringScore(); notify('WICKET!');
+}
+function cancelWicket() {
+  document.getElementById('wicket-modal').style.display='none';
+  scoringState.pendingWicket = false;
+}
+function undoBall() {
+  const inn = getCurrentInnings();
+  if(!inn||!inn.balls.length) { notify('Nothing to undo','error'); return; }
+  inn.balls.pop();
+  saveDB(); renderScoringScore(); notify('Last ball undone');
+}
+function endInnings() {
+  const inn = getCurrentInnings();
+  if(!inn) return;
+  if(!confirm('End this innings?')) return;
+  inn.completed = true;
+  const m = DB.matches.find(m => m.id == scoringState.matchId);
+  if(scoringState.innings===2) {
+    m.status = 'completed';
+    // Simple result
+    const s1 = getInningsScore(m.innings1);
+    const s2 = getInningsScore(m.innings2);
+    const t1 = DB.teams.find(t => t.id == m.team1Id);
+    const t2 = DB.teams.find(t => t.id == m.team2Id);
+    if(s2.runs > s1.runs) {
+      const wkts = 10 - s2.wkts;
+      m.result = `${DB.teams.find(t=>t.id==m.innings2.battingTeamId)?.name} won by ${wkts} wickets`;
+    } else if(s1.runs > s2.runs) {
+      const diff = s1.runs - s2.runs;
+      m.result = `${DB.teams.find(t=>t.id==m.innings1.battingTeamId)?.name} won by ${diff} runs`;
+    } else {
+      m.result = 'Match Tied';
+    }
+    updatePointsTable();
+  }
+  saveDB(); notify('Innings ended!');
+}
+function updatePointsTable() {
+  DB.teams.forEach(t => { t.played=0; t.won=0; t.lost=0; t.nr=0; t.pts=0; t.form=[]; });
+  DB.matches.forEach(m => {
+    if(m.status !== 'completed') return;
+    const t1 = DB.teams.find(t => t.id == m.team1Id);
+    const t2 = DB.teams.find(t => t.id == m.team2Id);
+    if(!t1||!t2) return;
+    t1.played++; t2.played++;
+    if(!m.result) return;
+    if(m.result.includes('won')) {
+      const winTeamName = m.result.split(' won')[0];
+      if(t1.name === winTeamName) { t1.won++; t1.pts+=2; t1.form.push('W'); t2.lost++; t2.form.push('L'); }
+      else { t2.won++; t2.pts+=2; t2.form.push('W'); t1.lost++; t1.form.push('L'); }
+    } else if(m.result.includes('Tied')) { t1.pts+=1; t2.pts+=1; t1.form.push('NR'); t2.form.push('NR'); }
+    else if(m.result.includes('Abandoned')||m.result.includes('No Result')) { t1.nr++; t2.nr++; t1.pts+=1; t2.pts+=1; t1.form.push('NR'); t2.form.push('NR'); }
+  });
+}
+
+// ===== TOURNAMENT =====
+function saveTournament() {
+  DB.tournament.name = document.getElementById('trn-name').value;
+  DB.tournament.season = document.getElementById('trn-season').value;
+  DB.tournament.ground = document.getElementById('trn-ground').value;
+  DB.tournament.start = document.getElementById('trn-start').value;
+  DB.tournament.end = document.getElementById('trn-end').value;
+  DB.tournament.overs = document.getElementById('trn-overs').value;
+  saveDB(); notify('Tournament settings saved!');
+}
+
+// ===== RENDER ALL =====
+function renderAll() {
+  renderHomeMatches();
+  renderAllMatches();
+  renderPointsTable();
+  renderTeamsGrid();
+  renderSchedule();
+  renderStats();
+}
+function populateAdminDropdowns() {
+  populatePlayerDropdowns();
+  populateMatchDropdowns();
+  populateScoringDropdowns();
+}
+
+// ===== MATCH CARD =====
+function makeMatchCard(m, clickable=true) {
+  const t1 = DB.teams.find(t => t.id == m.team1Id);
+  const t2 = DB.teams.find(t => t.id == m.team2Id);
+  if(!t1||!t2) return '';
+  const s1 = m.innings1 ? getInningsScore(m.innings1) : null;
+  const s2 = m.innings2 ? getInningsScore(m.innings2) : null;
+  const pill = m.status==='live' ? '<span class="live-pill">● LIVE</span>'
+    : m.status==='completed' ? '<span class="completed-pill">✓ COMPLETED</span>'
+    : m.status==='abandoned' ? '<span style="background:var(--muted);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;">ABANDONED</span>'
+    : '<span class="upcoming-pill">UPCOMING</span>';
+  const t1score = s1 ? `<div class="score-runs">${s1.runs}/${s1.wkts}</div><div class="score-overs">${s1.overs} ov</div>` : '<div class="score-yet">Yet to bat</div>';
+  const t2score = s2 ? `<div class="score-runs">${s2.runs}/${s2.wkts}</div><div class="score-overs">${s2.overs} ov</div>` : '<div class="score-yet">Yet to bat</div>';
+  const statusText = m.result || (m.status==='live' ? '⚡ Match in Progress' : `${m.date}${m.time?' · '+m.time:''} · ${m.venue||'TBD'}`);
+  return `<div class="match-card" ${clickable?`onclick="openMatchDetail(${m.id})"`:''>
+    <div class="match-card-header">
+      <span class="match-label">${m.type||'League'} · ${m.venue||'TBD'}</span>
+      ${pill}
+    </div>
+    <div class="match-card-body">
+      <div class="team-row">
+        <div class="team-info">
+          <div class="team-logo-sm" style="background:${t1.color||'#ef4444'}22;color:${t1.color||'#ef4444'};border:2px solid ${t1.color||'#ef4444'}44;">${t1.shortName||t1.name.substring(0,3)}</div>
+          <div><div class="team-name-main">${t1.name}</div><div class="team-name-short">${t1.shortName}</div></div>
+        </div>
+        <div class="score-display">${t1score}</div>
+      </div>
+      <hr class="match-divider">
+      <div class="team-row">
+        <div class="team-info">
+          <div class="team-logo-sm" style="background:${t2.color||'#3b82f6'}22;color:${t2.color||'#3b82f6'};border:2px solid ${t2.color||'#3b82f6'}44;">${t2.shortName||t2.name.substring(0,3)}</div>
+          <div><div class="team-name-main">${t2.name}</div><div class="team-name-short">${t2.shortName}</div></div>
+        </div>
+        <div class="score-display">${t2score}</div>
+      </div>
+    </div>
+    <div class="match-status-bar">${statusText}</div>
+  </div>`;
+}
+function renderHomeMatches() {
+  const el = document.getElementById('home-matches-grid');
+  const visible = DB.matches.filter(m => m.status==='live'||m.status==='completed').slice(-6).reverse();
+  if(!visible.length) { el.innerHTML = '<div class="empty-state"><div class="icon">🏏</div><p>No matches yet.</p></div>'; return; }
+  el.innerHTML = visible.map(m => makeMatchCard(m)).join('');
+}
+function renderAllMatches() {
+  const el = document.getElementById('all-matches-grid');
+  if(!DB.matches.length) { el.innerHTML = '<div class="empty-state"><div class="icon">🏏</div><p>No matches yet.</p></div>'; return; }
+  el.innerHTML = DB.matches.slice().reverse().map(m => makeMatchCard(m)).join('');
+}
+
+// ===== MATCH DETAIL =====
+function openMatchDetail(matchId) {
+  const m = DB.matches.find(m => m.id == matchId);
+  if(!m) return;
+  document.getElementById('matches-list-view').style.display='none';
+  const dv = document.getElementById('match-detail');
+  dv.classList.add('active');
+  dv.style.display='block';
+  renderMatchDetail(m);
+}
+function closeMatchDetail() {
+  document.getElementById('match-detail').classList.remove('active');
+  document.getElementById('match-detail').style.display='none';
+  document.getElementById('matches-list-view').style.display='block';
+}
+function renderMatchDetail(m) {
+  const t1 = DB.teams.find(t => t.id == m.team1Id);
+  const t2 = DB.teams.find(t => t.id == m.team2Id);
+  const s1 = m.innings1 ? getInningsScore(m.innings1) : null;
+  const s2 = m.innings2 ? getInningsScore(m.innings2) : null;
+  const statusPill = m.status==='live'?'<span class="live-pill">● LIVE</span>':m.status==='completed'?'<span class="completed-pill">✓ COMPLETED</span>':'<span class="upcoming-pill">UPCOMING</span>';
+  let html = `
+  <div class="scorecard-container">
+    <div class="scorecard-header">
+      <div class="sc-match-info">${m.type||'League Match'} · ${m.date}${m.time?' · '+m.time:''}</div>
+      <div class="sc-title">${t1?t1.name:'?'} vs ${t2?t2.name:'?'} ${statusPill}</div>
+      <div class="sc-venue">${m.venue||'Venue TBD'}${m.tossWinner?` · Toss: ${DB.teams.find(t=>t.id==m.tossWinner)?.name||''} elected to ${m.tossDecision==='bat'?'bat':'bowl'}`:''}
+      ${m.result?`<br><strong style="color:var(--accent2)">${m.result}</strong>`:''}</div>
+    </div>
+    <div class="match-detail-tabs">
+      <div class="mdt active" onclick="showMDT(this,'mdt-sc')">Scorecard</div>
+      <div class="mdt" onclick="showMDT(this,'mdt-comm')">Commentary</div>
+      <div class="mdt" onclick="showMDT(this,'mdt-overs')">Over by Over</div>
+      <div class="mdt" onclick="showMDT(this,'mdt-info')">Match Info</div>
+    </div>
+    <div class="innings-content">
+      <!-- SCORECARD -->
+      <div id="mdt-sc">
+        ${m.innings1 ? renderInningsSC(m.innings1, '1st Innings', m.overs) : '<div class="match-not-started"><div class="icon">🏏</div><p>Match not started yet</p></div>'}
+        ${m.innings2 ? renderInningsSC(m.innings2, '2nd Innings', m.overs) : ''}
+      </div>
+      <!-- COMMENTARY -->
+      <div id="mdt-comm" style="display:none;">
+        ${m.innings1 ? renderCommentary(m.innings1, '1st Innings') : '<div class="match-not-started"><div class="icon">💬</div><p>No commentary yet</p></div>'}
+        ${m.innings2 ? renderCommentary(m.innings2, '2nd Innings') : ''}
+      </div>
+      <!-- OVERS -->
+      <div id="mdt-overs" style="display:none;">
+        ${m.innings1 ? renderOverGrid(m.innings1, '1st Innings') : '<div class="match-not-started"><div class="icon">📊</div><p>No data yet</p></div>'}
+        ${m.innings2 ? renderOverGrid(m.innings2, '2nd Innings') : ''}
+      </div>
+      <!-- MATCH INFO -->
+      <div id="mdt-info" style="display:none;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="batter-card"><div class="form-label">Match Type</div><div>${m.type||'League'}</div></div>
+          <div class="batter-card"><div class="form-label">Venue</div><div>${m.venue||'TBD'}</div></div>
+          <div class="batter-card"><div class="form-label">Date & Time</div><div>${m.date}${m.time?' '+m.time:''}</div></div>
+          <div class="batter-card"><div class="form-label">Overs</div><div>${m.overs}</div></div>
+          ${m.tossWinner?`<div class="batter-card"><div class="form-label">Toss</div><div>${DB.teams.find(t=>t.id==m.tossWinner)?.name} elected to ${m.tossDecision==='bat'?'bat first':'bowl first'}</div></div>`:''}
+          ${m.result?`<div class="batter-card" style="grid-column:1/-1;"><div class="form-label">Result</div><div style="color:var(--accent2);font-weight:700;font-size:18px;">${m.result}</div></div>`:''}
+        </div>
+      </div>
+    </div>
+  </div>`;
+  document.getElementById('match-detail-content').innerHTML = html;
+}
+function showMDT(btn, panel) {
+  document.querySelectorAll('.mdt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['mdt-sc','mdt-comm','mdt-overs','mdt-info'].forEach(id => {
+    const el = document.getElementById(id); if(el) el.style.display='none';
+  });
+  const el = document.getElementById(panel); if(el) el.style.display='block';
+}
+function renderInningsSC(inn, label, totalOvers) {
+  const battingTeam = DB.teams.find(t => t.id == inn.battingTeamId);
+  const bowlingTeam = DB.teams.find(t => t.id == inn.bowlingTeamId);
+  const s = getInningsScore(inn);
+  // Build batter stats from balls
+  const batterStats = {};
+  const bowlerStats = {};
+  inn.balls.forEach(b => {
+    if(!batterStats[b.strikerId]) batterStats[b.strikerId] = {runs:0,balls:0,fours:0,sixes:0,dismissed:false,how:''};
+    if(!bowlerStats[b.bowlerId]) bowlerStats[b.bowlerId] = {balls:0,runs:0,wkts:0,maidens:0,dots:0};
+    const bs = batterStats[b.strikerId];
+    const bws = bowlerStats[b.bowlerId];
+    if(b.runs==='W') { bs.dismissed=true; bs.how=b.type+(b.fielderId?` c/ro ${DB.players.find(p=>p.id==b.fielderId)?.name||''}`:'') +` b ${DB.players.find(p=>p.id==b.bowlerId)?.name||''}`; bs.balls++; bws.balls++; bws.wkts++; bws.dots++; }
+    else if(b.runs==='Wd') { bws.runs++; }
+    else if(b.runs==='Nb') { bws.runs++; }
+    else if(b.runs==='Lb'||b.runs==='By') { bs.balls++; bws.balls++; bws.dots++; }
+    else { const r=parseInt(b.runs)||0; bs.runs+=r; bs.balls++; if(r===4) bs.fours++; if(r===6) bs.sixes++; bws.balls++; bws.runs+=r; if(r===0) bws.dots++; }
+  });
+  const extras = inn.balls.filter(b=>['Wd','Nb','Lb','By'].includes(b.runs)).length;
+  const battersPlayed = Object.keys(batterStats).map(id => {
+    const p = DB.players.find(p => p.id == parseInt(id));
+    const s = batterStats[id];
+    const sr = s.balls > 0 ? ((s.runs/s.balls)*100).toFixed(1) : '0.0';
+    const srClass = parseFloat(sr)>=150?'sr-high':parseFloat(sr)>=100?'sr-mid':'sr-low';
+    return `<tr>
+      <td><span class="player-name-link">${p?p.name:'Unknown'}</span><span class="dismissal-info">${s.dismissed?s.how:'not out'}</span></td>
+      <td class="bold-score">${s.runs}</td>
+      <td>${s.balls}</td>
+      <td style="color:var(--accent2)">${s.fours}</td>
+      <td style="color:var(--accent)">${s.sixes}</td>
+      <td><span class="sr-badge ${srClass}">${sr}</span></td>
+    </tr>`;
+  }).join('');
+  const bowlersPlayed = Object.keys(bowlerStats).map(id => {
+    const p = DB.players.find(p => p.id == parseInt(id));
+    const b = bowlerStats[id];
+    const overs = Math.floor(b.balls/6)+'.'+(b.balls%6);
+    const econ = b.balls>0 ? ((b.runs/(b.balls/6))).toFixed(2) : '0.00';
+    return `<tr>
+      <td><span class="player-name-link">${p?p.name:'Unknown'}</span></td>
+      <td>${overs}</td>
+      <td>${b.maidens||0}</td>
+      <td>${b.runs}</td>
+      <td class="bold-score">${b.wkts}</td>
+      <td>${b.dots}</td>
+      <td>${econ}</td>
+    </tr>`;
+  }).join('');
+  return `
+  <div style="margin-bottom:32px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;">${battingTeam?battingTeam.name:'?'} — ${label}</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:22px;font-weight:700;color:var(--accent);">${s.runs}/${s.wkts} <span style="font-size:14px;color:var(--muted)">(${s.overs}/${totalOvers} ov)</span></div>
+    </div>
+    <div class="section-heading">BATTING</div>
+    <table class="batting-table">
+      <thead><tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr></thead>
+      <tbody>${battersPlayed||'<tr><td colspan="6" class="dnb">No data</td></tr>'}</tbody>
+      <tfoot>
+        <tr class="extras-row"><td colspan="5">Extras</td><td>${extras}</td></tr>
+        <tr class="total-row"><td colspan="5"><strong>TOTAL</strong></td><td class="bold-score">${s.runs}/${s.wkts} (${s.overs} Ov)</td></tr>
+      </tfoot>
+    </table>
+    <div class="section-heading">BOWLING</div>
+    <table class="bowling-table">
+      <thead><tr><th>Bowler</th><th>O</th><th>M</th><th>R</th><th>W</th><th>Dots</th><th>Econ</th></tr></thead>
+      <tbody>${bowlersPlayed||'<tr><td colspan="7" class="dnb">No data</td></tr>'}</tbody>
+    </table>
+  </div>`;
+}
+function renderCommentary(inn, label) {
+  if(!inn.balls.length) return `<div class="match-not-started"><div class="icon">💬</div><p>No commentary for ${label}</p></div>`;
+  const battingTeam = DB.teams.find(t => t.id == inn.battingTeamId);
+  let html = `<div class="section-heading">${label} — ${battingTeam?battingTeam.name:''}</div><div class="commentary-container">`;
+  const balls = [...inn.balls].reverse();
+  balls.forEach(b => {
+    const striker = DB.players.find(p => p.id == b.strikerId);
+    const bowler = DB.players.find(p => p.id == b.bowlerId);
+    let ballClass = 'ball-'+b.runs;
+    if(b.runs==='0') ballClass = 'ball-0';
+    html += `<div class="comm-item">
+      <div class="comm-over">${b.over||'0.0'}</div>
+      <div class="comm-ball ${ballClass}">${b.runs==='0'?'•':b.runs}</div>
+      <div class="comm-text"><strong>${bowler?bowler.name:'?'}</strong> to <strong>${striker?striker.name:'?'}</strong> — ${b.desc||b.runs}</div>
+    </div>`;
+  });
+  html += '</div>';
+  return html;
+}
+function renderOverGrid(inn, label) {
+  if(!inn.balls.length) return `<div class="match-not-started"><div class="icon">📊</div><p>No data</p></div>`;
+  const battingTeam = DB.teams.find(t => t.id == inn.battingTeamId);
+  const overs = {};
+  let legalBalls = 0;
+  inn.balls.forEach(b => {
+    const ovNum = Math.floor(legalBalls/6);
+    if(!overs[ovNum]) overs[ovNum] = [];
+    overs[ovNum].push(b);
+    if(!['Wd','Nb'].includes(b.runs)) legalBalls++;
+  });
+  let html = `<div class="section-heading">${label} — ${battingTeam?battingTeam.name:''}</div><div class="over-grid">`;
+  Object.keys(overs).forEach(ov => {
+    const balls = overs[ov];
+    let ovRuns = 0;
+    balls.forEach(b => { if(!['W','Wd','Nb','Lb','By'].includes(b.runs)) ovRuns+=parseInt(b.runs)||0; else if(['Wd','Nb','Lb','By'].includes(b.runs)) ovRuns+=1; });
+    html += `<div class="over-group">
+      <div class="over-num">Ov ${parseInt(ov)+1} · ${ovRuns}R</div>
+      <div class="over-balls">${balls.map(b => {
+        let cls='ob ball-'+b.runs; let label2=b.runs;
+        if(b.runs==='0'){cls='ob ball-0';label2='•';}
+        return `<div class="${cls}">${label2}</div>`;
+      }).join('')}</div>
+    </div>`;
+  });
+  html += '</div>';
+  return html;
+}
+
+// ===== POINTS TABLE =====
+function renderPointsTable() {
+  updatePointsTable();
+  const tbody = document.getElementById('points-tbody');
+  const sorted = [...DB.teams].sort((a,b) => (b.pts-a.pts)||(b.nrr-a.nrr));
+  if(!sorted.length) { tbody.innerHTML = '<tr><td colspan="9" class="empty-state">No data</td></tr>'; return; }
+  tbody.innerHTML = sorted.map((t,i) => {
+    const nrrStr = t.nrr >= 0 ? `<span class="nrr-pos">+${t.nrr.toFixed(3)}</span>` : `<span class="nrr-neg">${t.nrr.toFixed(3)}</span>`;
+    const rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+    const form = (t.form||[]).slice(-5).map(f => f==='W'?`<span class="form-w">W</span>`:f==='L'?`<span class="form-l">L</span>`:`<span class="form-nr">N</span>`).join('');
+    return `<tr>
+      <td><div class="rank-badge ${rankClass}">${i+1}</div></td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:6px;height:32px;background:${t.color||'#888'};border-radius:3px;"></div>
+          <div><div style="font-weight:700;">${t.name}</div><div style="font-size:11px;color:var(--muted);">${t.shortName}</div></div>
+        </div>
+      </td>
+      <td>${t.played||0}</td>
+      <td style="color:var(--accent2)">${t.won||0}</td>
+      <td style="color:var(--red)">${t.lost||0}</td>
+      <td>${t.nr||0}</td>
+      <td style="font-family:'Orbitron',sans-serif;font-weight:700;color:var(--accent)">${t.pts||0}</td>
+      <td>${nrrStr}</td>
+      <td><div class="form-badges">${form}</div></td>
+    </tr>`;
+  }).join('');
+}
+
+// ===== TEAMS GRID =====
+function renderTeamsGrid() {
+  const el = document.getElementById('teams-grid');
+  if(!DB.teams.length) { el.innerHTML = '<div class="empty-state"><div class="icon">👥</div><p>No teams yet.</p></div>'; return; }
+  el.innerHTML = DB.teams.map(t => {
+    const players = DB.players.filter(p => p.teamId == t.id);
+    const captain = players.find(p => p.isCap === 'yes');
+    return `<div class="team-card" onclick="openTeamDetail(${t.id})">
+      <div class="team-card-banner" style="background:linear-gradient(135deg,${t.color||'#333'}44,${t.color||'#333'}22);">
+        <div class="team-card-logo" style="border-color:${t.color||'#888'};color:${t.color||'#fff'};">${t.shortName||t.name.substring(0,3)}</div>
+      </div>
+      <div class="team-card-body">
+        <div class="team-card-name" style="color:${t.color||'var(--text)'}">${t.name}</div>
+        <div class="team-card-captain">👑 ${captain?captain.name:t.captain||'TBD'}</div>
+        <div class="team-card-stats">
+          <div class="tcs"><div class="tcs-val" style="color:${t.color}">${players.length}</div><div class="tcs-label">Players</div></div>
+          <div class="tcs"><div class="tcs-val" style="color:var(--accent2)">${t.won||0}</div><div class="tcs-label">Wins</div></div>
+          <div class="tcs"><div class="tcs-val" style="color:var(--accent)">${t.pts||0}</div><div class="tcs-label">Pts</div></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+function openTeamDetail(teamId) {
+  const t = DB.teams.find(t => t.id == teamId);
+  if(!t) return;
+  document.getElementById('teams-list-view').style.display='none';
+  document.getElementById('team-detail-view').style.display='block';
+  const players = DB.players.filter(p => p.teamId == teamId);
+  let html = `
+  <div class="squad-container">
+    <div class="squad-header">
+      <div class="squad-team-info">
+        <div class="squad-logo" style="background:${t.color}22;border-color:${t.color}66;color:${t.color}">${t.shortName}</div>
+        <div><div class="squad-team-name">${t.name}</div><div class="squad-team-captain">${t.ground?'🏟 '+t.ground:''}</div></div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-family:'Orbitron',sans-serif;font-size:24px;color:var(--accent);">${t.pts||0} Pts</div>
+        <div style="font-size:12px;color:var(--muted);">P${t.played||0} W${t.won||0} L${t.lost||0}</div>
+      </div>
+    </div>
+    <div class="player-list">
+      <div class="section-heading">SQUAD (${players.length} Players)</div>`;
+  if(players.length) {
+    html += players.map(p => {
+      const initials = p.name.split(' ').map(n=>n[0]).join('').substring(0,2).toUpperCase();
+      return `<div class="player-item">
+        <div class="player-avatar" style="background:linear-gradient(135deg,${t.color},${t.color}99)">${initials}</div>
+        <div class="player-details">
+          <div class="player-pname">${p.name} ${p.isCap==='yes'?'<span class="captain-badge">C</span>':p.isCap==='vc'?'<span class="captain-badge" style="background:var(--accent3);color:#fff;">VC</span>':''}</div>
+          <div class="player-role">${p.role} · #${p.jersey||'—'}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px;">${p.bat} · ${p.bowl}</div>
+        </div>
+        <div class="player-stats-mini">
+          <div class="psm"><div class="psm-val">${p.stats?.runs||0}</div><div class="psm-label">Runs</div></div>
+          <div class="psm"><div class="psm-val">${p.stats?.wkts||0}</div><div class="psm-label">Wkts</div></div>
+        </div>
+      </div>`;
+    }).join('');
+  } else {
+    html += '<div class="empty-state">No players added to this team yet.</div>';
+  }
+  html += '</div></div>';
+  document.getElementById('team-detail-content').innerHTML = html;
+}
+function closeTeamDetail() {
+  document.getElementById('team-detail-view').style.display='none';
+  document.getElementById('teams-list-view').style.display='block';
+}
+
+// ===== SCHEDULE =====
+function renderSchedule() {
+  const el = document.getElementById('schedule-list');
+  if(!DB.matches.length) { el.innerHTML = '<div class="empty-state"><div class="icon">📅</div><p>No matches scheduled.</p></div>'; return; }
+  const groups = {};
+  DB.matches.forEach(m => {
+    const key = m.date||'TBD';
+    if(!groups[key]) groups[key] = [];
+    groups[key].push(m);
+  });
+  let html = '';
+  Object.keys(groups).sort().forEach(date => {
+    html += `<div class="schedule-group-label">📅 ${date ? new Date(date).toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'}) : 'Date TBD'}</div>`;
+    groups[date].forEach(m => {
+      const t1 = DB.teams.find(t => t.id == m.team1Id);
+      const t2 = DB.teams.find(t => t.id == m.team2Id);
+      const pill = m.status==='live'?'<span class="live-pill">● LIVE</span>':m.status==='completed'?'<span class="completed-pill">✓ DONE</span>':'<span class="upcoming-pill">UPCOMING</span>';
+      html += `<div class="schedule-card" onclick="showSection('matches')">
+        <div>
+          <div class="sc-match-num">${m.type||'League'}</div>
+          <div class="sc-teams">${t1?t1.name:'?'} <span style="color:var(--muted);font-weight:400">vs</span> ${t2?t2.name:'?'}</div>
+          <div class="sc-venue-date">${m.time||''} · ${m.venue||'Venue TBD'} · ${m.overs} Overs</div>
+          ${m.result?`<div style="font-size:12px;color:var(--accent2);margin-top:4px;">${m.result}</div>`:''}
+        </div>
+        ${pill}
+      </div>`;
+    });
+  });
+  document.getElementById('schedule-list').innerHTML = html;
+}
+
+// ===== STATS =====
+function showStatsTab(tab) {
+  document.querySelectorAll('.stats-tab').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('stats-batting').style.display = tab==='batting'?'grid':'none';
+  document.getElementById('stats-bowling').style.display = tab==='bowling'?'grid':'none';
+}
+function renderStats() {
+  renderBattingStats(); renderBowlingStats();
+}
+function getBatterStats() {
+  const stats = {};
+  DB.matches.forEach(m => {
+    [m.innings1, m.innings2].forEach(inn => {
+      if(!inn) return;
+      inn.balls.forEach(b => {
+        if(!stats[b.strikerId]) stats[b.strikerId] = {runs:0,balls:0,fours:0,sixes:0,dismissed:0,inns:0};
+        const s = stats[b.strikerId];
+        if(b.runs==='W') { s.dismissed++; s.inns++; s.balls++; }
+        else if(!['Wd','Nb','Lb','By'].includes(b.runs)) { s.runs+=parseInt(b.runs)||0; s.balls++; if(b.runs==='4')s.fours++; if(b.runs==='6')s.sixes++; }
+      });
+    });
+  });
+  return stats;
+}
+function renderBattingStats() {
+  const el = document.getElementById('stats-batting');
+  const stats = getBatterStats();
+  const sorted = Object.entries(stats).sort((a,b) => b[1].runs-a[1].runs).slice(0,20);
+  const maxRuns = sorted[0]?.[1]?.runs||1;
+  if(!sorted.length) { el.innerHTML = '<div class="empty-state">No batting data yet</div>'; return; }
+  el.innerHTML = `
+  <div class="stats-card" style="grid-column:1/-1;">
+    <div class="stats-card-title">🏏 TOP RUN SCORERS</div>
+    ${sorted.slice(0,10).map(([id,s],i)=>{
+      const p=DB.players.find(p=>p.id==parseInt(id));
+      const t=p?DB.teams.find(t=>t.id==p.teamId):null;
+      const avg=s.inns>0?(s.runs/(s.inns-0)).toFixed(1):s.runs;
+      const sr=s.balls>0?((s.runs/s.balls)*100).toFixed(1):'0.0';
+      return `<div class="stats-player-row">
+        <span class="stats-rank">${i+1}</span>
+        <div style="flex:1;margin-left:8px;">
+          <div class="stats-player-name">${p?p.name:'Unknown'}</div>
+          <div class="stats-player-team">${t?t.name:''} · SR: ${sr} · 4s: ${s.fours} · 6s: ${s.sixes}</div>
+          <div class="stats-bar-track"><div class="stats-bar-fill" style="width:${(s.runs/maxRuns*100).toFixed(0)}%"></div></div>
+        </div>
+        <span class="stats-value">${s.runs}</span>
+      </div>`;
+    }).join('')}
+  </div>
+  <div class="stats-card">
+    <div class="stats-card-title">💥 MOST SIXES</div>
+    ${Object.entries(stats).sort((a,b)=>b[1].sixes-a[1].sixes).slice(0,5).map(([id,s],i)=>{
+      const p=DB.players.find(p=>p.id==parseInt(id));
+      return `<div class="stats-player-row"><span class="stats-rank">${i+1}</span><span class="stats-player-name" style="flex:1;margin-left:8px;">${p?p.name:'?'}</span><span class="stats-value" style="color:var(--accent)">${s.sixes}</span></div>`;
+    }).join('')}
+  </div>
+  <div class="stats-card">
+    <div class="stats-card-title">🎯 MOST FOURS</div>
+    ${Object.entries(stats).sort((a,b)=>b[1].fours-a[1].fours).slice(0,5).map(([id,s],i)=>{
+      const p=DB.players.find(p=>p.id==parseInt(id));
+      return `<div class="stats-player-row"><span class="stats-rank">${i+1}</span><span class="stats-player-name" style="flex:1;margin-left:8px;">${p?p.name:'?'}</span><span class="stats-value" style="color:var(--accent2)">${s.fours}</span></div>`;
+    }).join('')}
+  </div>`;
+}
+function renderBowlingStats() {
+  const el = document.getElementById('stats-bowling');
+  const stats = {};
+  DB.matches.forEach(m => {
+    [m.innings1, m.innings2].forEach(inn => {
+      if(!inn) return;
+      inn.balls.forEach(b => {
+        if(!stats[b.bowlerId]) stats[b.bowlerId] = {wkts:0,balls:0,runs:0,dots:0};
+        const s = stats[b.bowlerId];
+        if(b.runs==='W') { s.wkts++; s.balls++; s.dots++; }
+        else if(b.runs==='Wd'||b.runs==='Nb') { s.runs+=1; }
+        else { s.runs+=parseInt(b.runs)||0; s.balls++; if(b.runs==='0'||b.runs==='Lb'||b.runs==='By') s.dots++; }
+      });
+    });
+  });
+  const sorted = Object.entries(stats).sort((a,b) => b[1].wkts-a[1].wkts).slice(0,20);
+  const maxWkts = sorted[0]?.[1]?.wkts||1;
+  if(!sorted.length) { el.innerHTML = '<div class="empty-state">No bowling data yet</div>'; return; }
+  el.innerHTML = `
+  <div class="stats-card" style="grid-column:1/-1;">
+    <div class="stats-card-title">🎳 TOP WICKET TAKERS</div>
+    ${sorted.slice(0,10).map(([id,s],i)=>{
+      const p=DB.players.find(p=>p.id==parseInt(id));
+      const t=p?DB.teams.find(t=>t.id==p.teamId):null;
+      const overs=Math.floor(s.balls/6)+'.'+(s.balls%6);
+      const econ=s.balls>0?((s.runs/(s.balls/6))).toFixed(2):'0.00';
+      return `<div class="stats-player-row">
+        <span class="stats-rank">${i+1}</span>
+        <div style="flex:1;margin-left:8px;">
+          <div class="stats-player-name">${p?p.name:'Unknown'}</div>
+          <div class="stats-player-team">${t?t.name:''} · ${overs} Ov · Econ: ${econ} · Dots: ${s.dots}</div>
+          <div class="stats-bar-track"><div class="stats-bar-fill" style="width:${(s.wkts/maxWkts*100).toFixed(0)}%"></div></div>
+        </div>
+        <span class="stats-value">${s.wkts}</span>
+      </div>`;
+    }).join('')}
+  </div>
+  <div class="stats-card">
+    <div class="stats-card-title">🔒 BEST ECONOMY</div>
+    ${Object.entries(stats).filter(([id,s])=>s.balls>=6).sort((a,b)=>(a[1].runs/(a[1].balls/6))-(b[1].runs/(b[1].balls/6))).slice(0,5).map(([id,s],i)=>{
+      const p=DB.players.find(p=>p.id==parseInt(id));
+      const econ=((s.runs/(s.balls/6))).toFixed(2);
+      return `<div class="stats-player-row"><span class="stats-rank">${i+1}</span><span class="stats-player-name" style="flex:1;margin-left:8px;">${p?p.name:'?'}</span><span class="stats-value" style="color:var(--accent2)">${econ}</span></div>`;
+    }).join('')}
+  </div>
+  <div class="stats-card">
+    <div class="stats-card-title">⚫ MOST DOT BALLS</div>
+    ${Object.entries(stats).sort((a,b)=>b[1].dots-a[1].dots).slice(0,5).map(([id,s],i)=>{
+      const p=DB.players.find(p=>p.id==parseInt(id));
+      return `<div class="stats-player-row"><span class="stats-rank">${i+1}</span><span class="stats-player-name" style="flex:1;margin-left:8px;">${p?p.name:'?'}</span><span class="stats-value">${s.dots}</span></div>`;
+    }).join('')}
+  </div>`;
+}
+
+// ===== INIT =====
+loadDB();
+renderAll();
+// Auto-refresh every 30s for live matches
+setInterval(() => { if(DB.matches.some(m=>m.status==='live')) renderAll(); }, 30000);
+</script>
+</body>
+</html>
